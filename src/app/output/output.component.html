@@ -1,0 +1,66 @@
+<div class="container">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <br>
+  <div class="form-group row">
+    <H1>Check Account</H1>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="form-group row">
+      <label for="key" class="col-5 col-form-label text-right font-weight-bold">
+        Click to See all of account >>>>
+      </label>
+      <!-- <div class="col-2">
+        <input type="text"  class="form-control" [(ngModel)]="model.key" name="key" id="key" required>
+      </div> -->
+
+      <!-- <label for="value" class="col-1 col-form-label text-right font-weight-bold">
+        value
+      </label>
+      <div class="col-3">
+        <input type="text" class="form-control border-bottom " [(ngModel)]="model.value"  id="value" name="value"
+          required>
+      </div> -->
+
+      <div class="form-group row float-lg-right">
+        <div class="offset-3 ">
+          <button type="submit" class="w3-btn w3-grey w3-border w3-border-green w3-text-white w3-round-xlarge" style="text-shadow:1px 1px 0 #444">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+
+
+
+<div class="container" id="result" style='display:none;'>
+  
+  <ul class="list-group ">
+    <li class="list-group-item active" style="background-color: coral; border: coral; ">Result</li>
+    <li class="list-group-item text-concat" *ngFor="let key of responseValue">
+        <font class="font">ID : </font>{{ key._id }}
+        <br>
+        <font class="font">Password : </font>{{ key.password }}
+        <br>
+      </li>
+  </ul>
+  <pre>
+        INV_JSON{{ jasontree | json }}   
+  </pre>
+
+</div>
+
+<div class="container" id="error" style='display:none;'>
+
+  <h3> ERROR </h3>
+  <div class="row">
+    <label for="erMass" class="col-2 col-form-label text-right font-weight-bold">
+      Massage
+    </label>
+    <div class="col-12">
+      <input type="text" class="form-control border-bottom " name="erMass" id="erMass" value="0" style="border:none; text-align: center;font-weight: bold;"
+        readonly>
+    </div>
+  </div>
+</div>

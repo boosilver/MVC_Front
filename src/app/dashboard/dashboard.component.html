@@ -1,0 +1,30 @@
+<div class="container" *ngIf="showUI">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <br>
+  <div class="form-group row">
+    <H1>DASHBOARD</H1>
+  </div>
+
+
+  <!-- Table -->
+  <br>
+  <table class="table table-responsive-sm table-hover table-outline mb-0 table-striped table-light pointer ">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--  list คือตัวแปรของเรา -->
+      <!-- <tr (click)="openModal(template,key)" *ngFor="let key of DASHBOARD$.DASHBOARD_LIST"> -->
+        <tr *ngFor="let key of DASHBOARD$.DASHBOARD_LIST">
+        <td>{{key.name}}</td>
+        <!-- <td>{{key.come}}</td> -->
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

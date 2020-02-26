@@ -1,0 +1,48 @@
+<section>
+	<!-- <section style="background: #161616;" id=""> -->
+	<nav class="navbar navbar-expand-sm circle ">
+		
+		<a id="company" class= "navbar-brand nav-link" style="color: rgb(0, 0, 0) ; " >|MVC|</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+
+				<li class="nav-item active">
+					<a class="nav-link" [routerLink]="['/inputdata']"> Register
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" [routerLink]="['/join']"> Join
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" [routerLink]="['/output']"> query
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" [routerLink]="['/dashboard']"> Dashboard
+						<span class="sr-only">
+							(current)
+						</span>
+					</a>
+				</li>
+				
+			</ul>
+    </div>
+  </nav>
+
+	<div>
+    
+		<router-outlet></router-outlet>
+  </div>
+  
+</section>

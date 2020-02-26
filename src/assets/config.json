@@ -1,0 +1,31 @@
+{
+    "DASHBOARD_DATA": {
+        "PO": 555,
+        "PO_WAIT": 123,
+        "INVOICE": 456,
+        "INVOICE_WAIT": 789
+    },
+    "DASHBOARD_LIST": [
+        {
+            "KEY": 1234,
+            "COMPANY": "bank",
+            "DATE": "2019/01/02",
+            "TYPE": "PO",
+            "STATUS": "Wait"
+        },
+        {
+            "KEY": 1235,
+            "COMPANY": "lotus",
+            "DATE": "2019/01/02",
+            "TYPE": "Invoice",
+            "STATUS": "Active"
+        },
+        {
+            "KEY": 1236,
+            "COMPANY": "themall",
+            "DATE": "2019-11-12",
+            "TYPE": "PO",
+            "STATUS": "Reject"
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+<div class="container">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <br>
+  <div class="form-group row">
+    <H1>Register Data</H1>
+  </div>
+  <form ngNativeValidate>
+
+    <div class="row">
+      <div class="field-label col-md-6 mx-auto">
+        <label for="accountID" class="text-muted">Account ID</label>
+        <input type="text" class="form-control border-bottom" required [(ngModel)]="model.accountID" id="accountID" name="accountID">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-label col-md-6 mx-auto">
+        <label for="password" class="text-muted">Password</label>
+        <input type="password" class="form-control " [(ngModel)]="model.password" id="password" name="password" required>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- ----------------------------------SUBMIT-------------------------------------- -->
+    <div class="row">
+      <div class="center">
+        <button type="submit" class="w3-btn w3-grey w3-border w3-border-green w3-text-white w3-round-xlarge"
+          (click)="openModal(template)" style="text-shadow:1px 1px 0 #444">SUBMIT</button>
+      </div>
+    </div>
+
+    <ng-template #template>
+      <div class="modal-body text-center">
+        <pre class="card card-block card-header text-left">
+      <p><span class="font">ID :</span> {{this.model.accountID.trim()}}</p>
+      <p><span class="font">Password :</span>  {{this.model.password}}</p>
+    </pre>
+        <p>Do you want to confirm?</p>
+
+        <button type="button" class="btn btn-primary" (click)="confirm(resulttemplate,errortemplate)">Yes</button>
+        <button type="button" class="btn btn-default" (click)="decline()">No</button>
+      </div>
+    </ng-template>
+    <!-- ------------------------------------------------------------------------------ -->
+    <br>
+    <ng-template #resulttemplate>
+      <div class="modal-body text-center">
+        <pre class="card card-block card-header text-left">
+            <p style="color:rgb(0, 0, 0); text-align: center " >{{message}}</p>
+              </pre>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="Ok()">
+          <a style="color:white">
+            Ok
+          </a>
+        </button>
+      </div>
+    </ng-template>
+
+    <br>
+    <ng-template #errortemplate>
+      <div class="modal-body text-center">
+        <pre class="card card-block card-header text-left">
+            <p style="color:rgb(255, 0, 0); text-align: center" >error: {{message}}</p>
+              </pre>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="Oknorefresh()">Ok</button>
+      </div>
+    </ng-template>
+    <!-- ------------------------------------------------------------------------------ -->
+  </form>
+</div>
